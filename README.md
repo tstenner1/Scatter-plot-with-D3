@@ -1,7 +1,5 @@
 # Data Journalism using D3
 
-![Newsroom](https://media.giphy.com/media/v2xIous7mnEYg/giphy.gif)
-
 In this repository I am tasked with analyzing the current trends shaping people's lives, as well as creating charts, graphs, and interactive elements to help readers understand my findings.
 
 I execute this analysis with data from the [US Census Bureau](https://data.census.gov/cedsci/) and the Behavioral Risk Factor Surveillance Systemrelates to find the health risks facing particular demographics.  These risks include rates of income, obesity, poverty, etc. by state. MOE stands for "margin of error.").
