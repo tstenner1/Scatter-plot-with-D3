@@ -8,13 +8,13 @@ I execute this analysis with data from the [US Census Bureau](https://data.censu
 
 ![4-scatter](Images/4-scatter.jpg)
 
-First I create a scatter plot between two of the data variables such as `Healthcare vs. Poverty` or `Smokers vs. Age`.
+First I created a scatter plot between two of the data variables such as `Healthcare vs. Poverty` or `Smokers vs. Age`.
 
 Then using the D3 techniques, I created a scatter plot that represents each state with circle elements.  Including: 
 
 * State abbreviations in the circles.
 
-* Create and situate axes and labels to the left and bottom of the chart.
+* Situating axes and labels to the left and bottom of the chart.
 
 ### Bonus
 
@@ -24,7 +24,7 @@ Instead of just a static graphic I use D3 to make a graph that lets you interact
 
 #### 1. More Dynamics
 
-I include more demographics and more risk factors. Placing additional labels in my scatter plot and giving them click events so that the users can decide which data to display. Animating the transitions for my circles' locations as well as the range of my axes is another dimension added to the graph. 
+I then included more demographics and more risk factors. Placing additional labels in my scatter plot and giving them click events so that the users can decide which data to display. Animating the transitions for my circles' locations as well as the range of my axes is another dimension added to the graph. 
 
 #### 2. Incorporate d3-tip
 
