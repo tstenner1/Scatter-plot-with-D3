@@ -21,3 +21,25 @@ function yScale(csvData, chosenYAxis) {
   
     return yLinearScale;
   }
+
+// function used for updating xAxis const upon click on axis label
+function renderXAxes(newXScale, xAxis) {
+    let bottomAxis = d3.axisBottom(newXScale);
+  
+    xAxis.transition()
+      .duration(1000)
+      .call(bottomAxis);
+  
+    return xAxis;
+  }
+  
+  // function used for updating yAxis const upon click on axis label
+  function renderYAxes(newYScale, yAxis) {
+    let leftAxis = d3.axisLeft(newYScale);
+  
+    yAxis.transition()
+      .duration(1000)
+      .call(leftAxis);
+  
+    return yAxis;
+  }
