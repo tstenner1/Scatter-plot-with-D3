@@ -43,3 +43,23 @@ function renderXAxes(newXScale, xAxis) {
   
     return yAxis;
   }
+
+// functions used for updating circles group with transition to new circles for both X and Y coordinates
+function renderXCircles(circlesGroup, newXScale, chosenXaxis) {
+
+    circlesGroup.transition()
+      .duration(1000)
+      .attr("cx", d => newXScale(d[chosenXAxis]));
+  
+    return circlesGroup;
+  }
+  
+  function renderYCircles(circlesGroup, newYScale, chosenYaxis) {
+  
+    circlesGroup.transition()
+      .duration(1000)
+      .attr("cy", d => newYScale(d[chosenYAxis]));
+  
+    return circlesGroup;
+  }
+  
