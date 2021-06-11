@@ -161,3 +161,40 @@ let chosenYAxis = "healthcare";
 
       // updates tooltips with the new info
       circlesGroup = updateToolTip(circlesGroup, chosenXAxis, chosenYAxis);
+
+      // changes classes to change bold text
+      if (chosenXAxis === "age") {
+        povertyLabel
+            .classed("active", false)
+            .classed("inactive", true);
+        ageLabel
+            .classed("active", true)
+            .classed("inactive", false);
+        incomeLabel
+            .classed("active", false)
+            .classed("inactive", true);
+          }
+      else if (chosenXAxis === "income") {
+        povertyLabel
+            .classed("active", false)
+            .classed("inactive", true);
+        ageLabel
+            .classed("active", false)
+            .classed("inactive", true);
+        incomeLabel
+            .classed("active", true)
+            .classed("inactive", false);
+          }
+          else {
+        povertyLabel
+            .classed("active", true)
+            .classed("inactive", false);
+        ageLabel
+            .classed("active", false)
+            .classed("inactive", true);
+        incomeLabel
+            .classed("active", false)
+            .classed("inactive", true);
+          }
+        }
+      });
