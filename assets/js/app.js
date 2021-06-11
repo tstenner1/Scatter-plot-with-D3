@@ -133,3 +133,31 @@ let chosenYAxis = "healthcare";
     // line 132 is value to grab for event listener
     .text("Obese (%)")
     .classed("inactive", true);
+
+  // initial tooltips
+  circlesGroup = updateToolTip(circlesGroup, chosenXAxis, chosenYAxis);
+
+  // x axis labels event listener
+  xlabelsGroup.selectAll("text")
+    .on("click", function() {
+    // get value of selection
+    const value = d3.select(this).attr("value");
+    if (value !== chosenXAxis) {
+
+      // replaces chosenXAxis with value
+      chosenXAxis = value;
+
+      // updates x scale for the new data
+      xLinearScale = xScale(stateData, chosenXAxis);
+
+      // updates x axis with the transition
+      xAxis = renderXAxes(xLinearScale, xAxis);
+
+      // updates circles with the new x values
+      circlesXY = renderXCircles(circlesXY, xLinearScale, chosenXAxis);
+
+      // updates circles text with the new x values
+      circlesText = renderXText(circlesText, xLinearScale, chosenXAxis);
+
+      // updates tooltips with the new info
+      circlesGroup = updateToolTip(circlesGroup, chosenXAxis, chosenYAxis);
