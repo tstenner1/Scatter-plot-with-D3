@@ -198,3 +198,27 @@ let chosenYAxis = "healthcare";
           }
         }
       });
+      // y axis labels event listener
+      ylabelsGroup.selectAll("text")
+        .on("click", function() {
+        // get value of selection
+        const value = d3.select(this).attr("value");
+        if (value !== chosenYAxis) {
+
+          // replaces chosenYAxis with value
+          chosenYAxis = value;
+
+          // updates y scale for new data
+          yLinearScale = yScale(stateData, chosenYAxis);
+
+          // updates y axis with transition
+          yAxis = renderYAxes(yLinearScale, yAxis);
+
+          // updates circles with new y values
+          circlesXY = renderYCircles(circlesXY, yLinearScale, chosenYAxis);
+
+          // updates circles text with new y values
+          circlesText = renderYText(circlesText, yLinearScale, chosenYAxis);
+
+          // updates tooltips with new info
+          circlesGroup = updateToolTip(circlesGroup, chosenXAxis, chosenYAxis);
