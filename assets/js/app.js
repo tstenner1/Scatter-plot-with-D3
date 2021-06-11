@@ -41,3 +41,19 @@ let chosenYAxis = "healthcare";
       data.obesity    = +data.obesity;
       data.income     = +data.income;
     });
+
+    // Initialize scale functions
+  let xLinearScale = xScale(stateData, chosenXAxis);
+  let yLinearScale = yScale(stateData, chosenYAxis);
+
+  // Initialize axis functions
+  let bottomAxis = d3.axisBottom(xLinearScale);
+  let leftAxis = d3.axisLeft(yLinearScale);
+
+  // Append x and y axes to the chart
+  let xAxis = chartGroup.append("g")
+    .attr("transform", `translate(0, ${height})`)
+    .call(bottomAxis);
+
+  let yAxis = chartGroup.append("g")
+    .call(leftAxis);
