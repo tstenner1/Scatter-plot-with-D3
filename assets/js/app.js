@@ -75,3 +75,61 @@ let chosenYAxis = "healthcare";
     .attr("dx", d => xLinearScale(d[chosenXAxis]))
     .attr("dy", d => yLinearScale(d[chosenYAxis]) + 5)
     .classed("stateText", true);
+
+  // Create group for 3 x-axis labels
+  const xlabelsGroup = chartGroup.append("g")
+    .attr("transform", `translate(${width / 2}, ${height})`);
+
+  const povertyLabel = xlabelsGroup.append("text")
+    .attr("x", 0)
+    .attr("y", 40)
+    .attr("value", "poverty") 
+    // line 86 is value to grab for event listener
+    .text("In Poverty (%)")
+    .classed("active", true);
+
+  const ageLabel = xlabelsGroup.append("text")
+    .attr("x", 0)
+    .attr("y", 60)
+    .attr("value", "age") 
+    // line 94 is value to grab for event listener
+    .text("Age (Median)")
+    .classed("inactive", true);
+
+  const incomeLabel = xlabelsGroup.append("text")
+    .attr("x", 0)
+    .attr("y", 80)
+    .attr("value", "income") 
+    // line 102 is value to grab for event listener
+    .text("Household Income (Median)")
+    .classed("inactive", true);
+
+  // Create group for 3 y-axis labels
+  const ylabelsGroup = chartGroup.append("g");
+
+  const healthcareLabel = ylabelsGroup.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -(height / 2))
+    .attr("y", -40)
+    .attr("value", "healthcare") 
+    // line 114 is value to grab for event listener
+    .text("Lacks Healthcare (%)")
+    .classed("active", true);
+
+  const smokesLabel = ylabelsGroup.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -(height / 2))
+    .attr("y", -60)
+    .attr("value", "smokes") 
+    // line 123 is value to grab for event listener
+    .text("Smokes (%)")
+    .classed("inactive", true);
+
+  const obeseLabel = ylabelsGroup.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("x", -(height / 2))
+    .attr("y", -80)
+    .attr("value", "obesity") 
+    // line 132 is value to grab for event listener
+    .text("Obese (%)")
+    .classed("inactive", true);
