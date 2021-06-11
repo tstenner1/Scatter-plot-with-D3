@@ -185,7 +185,7 @@ let chosenYAxis = "healthcare";
             .classed("active", true)
             .classed("inactive", false);
           }
-          else {
+      else {
         povertyLabel
             .classed("active", true)
             .classed("inactive", false);
@@ -222,3 +222,42 @@ let chosenYAxis = "healthcare";
 
           // updates tooltips with new info
           circlesGroup = updateToolTip(circlesGroup, chosenXAxis, chosenYAxis);
+
+         // changes classes to change bold text
+         if (chosenYAxis === "smokes") {
+            healthcareLabel
+              .classed("active", false)
+              .classed("inactive", true);
+            smokesLabel
+              .classed("active", true)
+              .classed("inactive", false);
+            obeseLabel
+              .classed("active", false)
+              .classed("inactive", true);
+          }
+          else if (chosenYAxis === "obesity"){
+            healthcareLabel
+              .classed("active", false)
+              .classed("inactive", true);
+            smokesLabel
+              .classed("active", false)
+              .classed("inactive", true);
+            obeseLabel
+              .classed("active", true)
+              .classed("inactive", false);
+          }
+          else {
+            healthcareLabel
+              .classed("active", true)
+              .classed("inactive", false);
+            smokesLabel
+              .classed("active", false)
+              .classed("inactive", true);
+            obeseLabel
+              .classed("active", false)
+              .classed("inactive", true);
+          }
+        }
+      });
+    
+    })()
